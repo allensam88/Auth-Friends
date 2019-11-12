@@ -2,21 +2,76 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.title {
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px 0;
+    background-color: salmon;
+    border: 2px solid red;
+    border-radius: 5px;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-link {
-  color: #09d3ac;
+.link {
+    text-decoration: none;
+    color: black;
+    margin: 15px;
+    padding: 5px;
+    background-color: salmon;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.link:hover {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 250px;
+    margin: 15px;
+    border: 5px solid green;
+    background-color: lightgreen;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.input {
+    line-height: 25px;
+    font-size: 20px;
+    margin-top: 15px;
+    padding-left: 5px;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+
+.button {
+    font-size: 20px;
+    width: 100px;
+    margin: 15px auto;
+    padding: 5px;
+    background-color: dodgerblue;
+    border: 1px solid blue;
+    border-radius: 5px;
 }

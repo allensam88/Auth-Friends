@@ -30,20 +30,22 @@ const Login = props => {
 
     return (
         <div>
-            <form onSubmit={login}>
+            <form onSubmit={login} className='form'>
                 <input
                     type="text"
                     value={user}
                     onChange={userHandler}
                     placeholder="username"
+                    className='input'
                 />
                 <input
                     type="password"
                     value={pass}
                     onChange={passHandler}
                     placeholder="password"
+                    className='input'
                 />
-                <button>Sign In</button>
+                <button className='button'>Log In</button>
             </form>
         </div>
     )
