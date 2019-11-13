@@ -46,20 +46,32 @@
 .card {
     width: 250px;
     margin: 15px;
-    border: 5px solid green;
     background-color: lightgreen;
+    border: 5px solid green;
+    border-radius: 10px;
+}
+
+.card-name {
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 3px solid red;
+}
+
+.card-buttons {
+    display: flex;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 250px;
     margin: 0 auto;
 }
 
 .input {
     line-height: 25px;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 15px;
     padding-left: 5px;
     border: 2px solid blue;
@@ -74,9 +86,16 @@
     background-color: dodgerblue;
     border: 1px solid blue;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .button:hover {
     background-color: lightgreen;
     border: 1px solid green;
+}
+
+.edit-link {
+    color: black;
+    text-decoration: none;
+    padding: 25px;
 }

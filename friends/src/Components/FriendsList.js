@@ -10,7 +10,6 @@ const FriendsList = () => {
         axiosWithAuth()
             .get(`/friends`)
             .then(res => {
-                console.log(res)
                 setFriend(res.data);
             })
             .catch(err => console.log(err));
@@ -20,7 +19,6 @@ const FriendsList = () => {
         axiosWithAuth()
         .delete(`/friends/${friend.id}`)
         .then(res => {
-            console.log(res)
             setDeletedFriend(res.data);
         })
         .catch(err => console.log(err));
