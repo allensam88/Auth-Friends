@@ -4,22 +4,33 @@ import FriendCard from './FriendCard';
 
 const FriendsList = () => {
     const [friends, setFriend] = useState([]);
+    const [deletedFriend, setDeletedFriend] = useState(false);
 
     useEffect(() => {
         axiosWithAuth()
-            .get('/friends')
+            .get(`/friends`)
             .then(res => {
                 console.log(res)
                 setFriend(res.data);
             })
             .catch(err => console.log(err));
-    }, []);
+    }, [deletedFriend]);
 
+    const deleteFriend = friend => {
+        axiosWithAuth()
+        .delete(`/friends/${friend.id}`)
+        .then(res => {
+            console.log(res)
+            setDeletedFriend(res.data);
+        })
+        .catch(err => console.log(err));
+        alert(`${friend.name} has been deleted.`)
+    }
 
     return (
         <div className='list'>
             {friends.map(friend => {
-                return <FriendCard key={friend.id} friend={friend} />
+                return <FriendCard key={friend.id} friend={friend} deleteFriend={deleteFriend} />
           })}
         </div>
     );

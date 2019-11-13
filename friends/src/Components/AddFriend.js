@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axiosWithAuth from '../Auth/AxiosWithAuth';
 
-const AddFriend = () => {
-    const [friend, setFriend] = useState({ name: "", age: "", email: "" });
+const AddFriend = props => {
+    const [friend, setFriend] = useState({ name: '', age: '', email: '' });
 
     const handleChange = (event) => {
         setFriend({ ...friend, [event.target.name]: event.target.value });
@@ -14,41 +14,38 @@ const AddFriend = () => {
             id: Date.now(),
             name: friend.name,
             age: friend.age,
-            height: friend.email,
+            email: friend.email,
         };
         axiosWithAuth()
             .post('/friends', newFriend)
             .then(res => {
                 console.log(res.data)
-                setFriend(res.data)
+                props.history.push('/friends-list')
             })
-            .get(err => console.log(err));
-        alert(`Successfully added user "${friend.name}"`);
+            .catch(err => console.log(err));
+        alert(`Successfully added user ${friend.name}`);
         setFriend({
-            name: "",
-            age: "",
-            email: ""
+            name: '',
+            age: '',
+            email: ''
         });
     };
-
-    // if (props.isAdding) {
-    //     return (
-    //         <p>Adding Friend...</p>
-    //     )
-    // } else {
 
     return (
         <div>
             <form onSubmit={submitForm} className='form'>
                 <input
                     type='text'
+                    name="name"
                     value={friend.name}
                     onChange={handleChange}
                     placeholder='name'
                     className='input'
+                    autoComplete='off'
                 />
                 <input
                     type='text'
+                    name='age'
                     value={friend.age}
                     onChange={handleChange}
                     placeholder='age'
@@ -56,6 +53,7 @@ const AddFriend = () => {
                 />
                 <input
                     type='text'
+                    name='email'
                     value={friend.email}
                     onChange={handleChange}
                     placeholder='email'
